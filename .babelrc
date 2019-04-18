@@ -1,0 +1,39 @@
+{
+  "presets": [
+    [
+      "next/babel",
+      {
+        "preset-env": {
+          "targets": {
+            "node": "current",
+            "browsers": [">0.2%", "not dead", "not ie <= 11", "not op_mini all"]
+          }
+        }
+      }
+    ]
+  ],
+  "plugins": [
+    [
+      "module-resolver",
+      {
+        "root": ["./app"],
+        "alias": {
+          "pages": "./pages",
+          "routes": "./routes"
+        }
+      }
+    ],
+    ["styled-components", { "ssr": true, "displayName": true }],
+    [
+      "babel-plugin-inline-import",
+      {
+        "extensions": [".json", ".html", ".svg"]
+      }
+    ]
+  ],
+  "env": {
+    "production": {
+      "plugins": [["styled-components", { "ssr": true, "displayName": false }]]
+    }
+  }
+}
