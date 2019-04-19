@@ -8,13 +8,18 @@ import Head from 'components/head'
 import Nav from 'components/nav'
 
 import { ToDoList } from 'components/ToDo';
+import { Container, Box } from 'components/atoms';
 
 const Home = () => (
 	<>
 		<Head title="Hooks Power" />
 		<Nav />
 		<ThemeProvider theme={theme}>
-			<ToDoList />
+		<Container>
+			<Box py={2}>
+				<ToDoList />
+			</Box>
+		</Container>
 		</ThemeProvider>
 	</>
 )

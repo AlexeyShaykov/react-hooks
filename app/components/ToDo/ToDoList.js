@@ -6,7 +6,7 @@ export const ToDoList = props => {
   return (
 	<>
 	  <Heading heading2 center>
-		  AAAAA
+		  Cписок дел
 	  </Heading>
 	</>
   )
