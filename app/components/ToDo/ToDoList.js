@@ -1,13 +1,13 @@
 import React from 'react';
 
-import { Heading } from 'components/atoms';
+import { ToDo } from './ToDo';
 
-export const ToDoList = props => {
+export const ToDoList = ({ toDoItems }) => {
   return (
 	<>
-	  <Heading heading2 center>
-		  Cписок дел
-	  </Heading>
+	{toDoItems.map((item, index) => (
+		<ToDo key={item.id} {...item }/>
+	))}
 	</>
   )
 }
