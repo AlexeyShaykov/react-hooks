@@ -4,7 +4,6 @@ import { ThemeProvider } from 'styled-components';
 import theme from 'constants/theme';
 
 import Head from 'components/head';
-import Nav from 'components/nav';
 import GlobalStyle from 'components/GlobalStyle';
 import { ToDoList, ToDo } from 'components/ToDo';
 import { WithLoading } from 'components/HOCs';
@@ -38,7 +37,6 @@ const Home = () => {
   return (
     <>
       <Head title="Hooks Power" />
-      <Nav />
 	  <GlobalStyle />
       <ThemeProvider theme={theme}>	  
           <Container>
