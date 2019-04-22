@@ -13,19 +13,19 @@ export const Heading = styled.h3`
     font-size: ${heading1
       ? `${theme.fontSizes[3]}px`
       : heading2
-        ? `${theme.fontSizes[2]}px`
-        : heading4
-          ? `${theme.fontSizes[0]}px`
-          : `${theme.fontSizes[1]}px`};
+      ? `${theme.fontSizes[2]}px`
+      : heading4
+      ? `${theme.fontSizes[0]}px`
+      : `${theme.fontSizes[1]}px`};
     font-weight: ${heading1 ? 400 : heading2 ? 300 : 500};
     @media (min-width: ${theme.breakpoints[1]}) {
       font-size: ${heading1
         ? `${theme.fontSizes[4]}px`
         : heading2
-          ? `${theme.fontSizes[3]}px`
-          : heading4
-            ? `${theme.fontSizes[0]}px`
-            : `${theme.fontSizes[1]}px`};
+        ? `${theme.fontSizes[3]}px`
+        : heading4
+        ? `${theme.fontSizes[0]}px`
+        : `${theme.fontSizes[1]}px`};
     }
   `};
 `;

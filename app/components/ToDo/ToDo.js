@@ -1,27 +1,32 @@
-import React, { useRef } from 'react';
+import React, { useRef, useEffect } from 'react';
 import PropTypes from 'prop-types';
 
 import styled, { css } from 'styled-components';
 
 const ToDoInput = styled.input`
-	width: 100px;
-	height: 20px;
-`
+  width: 100px;
+  height: 20px;
+  padding: 10px;
+`;
 
-export const ToDo = ({ id, first_name = '', last_name = '' }) => {
-	const onChangeHandler = () => {};
-	const inputEl = useRef(null);
-	console.log('caught in ToDo ', first_name);
-	return (
-		<>
-		<ToDoInput value={ first_name === '' ? '' : `${first_name} - ${last_name}` } 
-				   ref={inputEl} 
-				   onChange={onChangeHandler}
-				   placeholder="введите имя" /> 
-		</>
-	)
-}
+export const ToDo = ({ id, first_name = '', last_name = '', setNewMember = () => {} }) => {
+  useEffect(() => {
+	setNewMember(inputEl.current);
+  });
+  const onChangeHandler = () => {};
+  const inputEl = useRef(null);
+  const valueAtr =
+    first_name !== '' ? { value: `${first_name} - ${last_name}` } : {};
+  return (
+    <>
+      <ToDoInput
+        {...valueAtr}
+        ref={inputEl}
+        onChange={onChangeHandler}
+        placeholder="введите имя"
+      />
+    </>
+  );
+};
 
-ToDo.propTypes = {
-
-}
+ToDo.propTypes = {};
