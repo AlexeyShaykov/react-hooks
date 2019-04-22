@@ -10,7 +10,7 @@ export default {
 	  textTitle: '#333',
 	  textInverse: '#fff',
 	},
-	fontBase: "'Open Sans', Arial, sans-serif",
+	fontBase: "'Public Sans', 'Open Sans', Arial, sans-serif",
 	containerWidth: '1004px', // 12 + 980 + 12
 	radius: [5],
 	zIndex: {

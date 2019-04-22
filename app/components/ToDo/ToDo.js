@@ -23,7 +23,7 @@ export const ToDo = ({ id, first_name = '', last_name = '', setNewMember = () =>
         {...valueAtr}
         ref={inputEl}
         onChange={onChangeHandler}
-        placeholder="введите имя"
+        placeholder="enter name"
       />
     </>
   );
