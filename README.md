@@ -15,9 +15,10 @@ yarn dev
 yarn deploy
 ```
 
-## :boat: Demo(if not open use vpn)
+## :boat: Demo (if not open use vpn)
 
-https://awesome-react-hooks.netlify.com/
+[demo](https://awesome-react-hooks.netlify.com/)
+
 
 ## :clap: Technical stack
 
