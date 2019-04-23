@@ -17,7 +17,7 @@ const ListWithLoading = WithLoading(ToDoList);
 
 const Home = () => {
 	const [ isLoading, setLoaded ] = useState(true);
-  const { toDoList, setToDoList } = useGetData(true, setLoaded);
+  const { toDoList, setToDoList } = useGetData(setLoaded);
   const [newMember, setNewMember] = useState('');
 
 

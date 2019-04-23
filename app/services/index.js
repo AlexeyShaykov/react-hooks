@@ -16,7 +16,7 @@ const avas = () => {
 
 export const getAvatar = avas();
 
-export const useGetData = (flag, setLoaded) => {
+export const useGetData = setLoaded => {
   const [toDoList, setToDoList] = useState([]);
   useEffect(async () => {
     const response = await fetch('https://reqres.in/api/users', {
@@ -31,6 +31,6 @@ export const useGetData = (flag, setLoaded) => {
 		return {...item, ...{ avatar: getAvatar()}};
 	}));
 	setLoaded(false);
-  }, [flag]);
+  }, []);
   return { toDoList, setToDoList };
 };
