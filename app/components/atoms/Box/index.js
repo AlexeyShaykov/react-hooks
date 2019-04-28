@@ -10,6 +10,4 @@ export const Box = styled.div`
   width: ${props => props.width || 'auto'};
 `;
 
-Box.defaultProps = {
-  px: `${theme.space[3] / 2}px`,
-};
+Box.defaultProps = { px: `${theme.space[3] / 2}px` };

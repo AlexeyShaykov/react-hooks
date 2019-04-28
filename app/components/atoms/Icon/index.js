@@ -14,9 +14,15 @@ const IconBox = styled(Box)`
   width: 25px;
   height: 25px;
   cursor: pointer;
+  transition: opacity 300ms;
+  &:hover {
+    opacity: .5;
+  }
 `;
 
-export const Icon = ({ name, mx, onClick, props }) => {
+export const Icon = ({
+ name, mx, onClick, props,
+}) => {
   const Component = icons[name];
   return name && onClick ? (
     <IconBox mx={mx} onClick={() => onClick(name)}>
@@ -28,8 +34,4 @@ export const Icon = ({ name, mx, onClick, props }) => {
 Icon.propTypes = {
   name: PropTypes.string.isRequired,
   onClick: PropTypes.func.isRequired,
-};
-
-Icon.defaultProps = {
-  name: '',
 };

@@ -1,7 +1,5 @@
 import styled from 'styled-components';
-import { space } from 'styled-system';
 
-import theme from 'constants/theme';
 import { Box } from 'components/atoms';
 
 export const Flex = styled(Box)`

@@ -6,7 +6,9 @@ import theme from 'constants/theme';
 export const Heading = styled.h3`
   ${space};
   line-height: 1.25;
-  ${({ heading1, heading2, heading4, center, inverse, uppercase }) => css`
+  ${({
+ heading1, heading2, heading4, center, inverse, uppercase,
+}) => css`
     text-transform: ${uppercase && 'uppercase'};
     color: ${inverse ? theme.colors.textInverse : theme.colors.textTitle};
     text-align: ${center ? 'center' : 'left'};
