@@ -11,20 +11,34 @@ const MemberInput = styled.input`
   border-radius: 4px;
 `;
 
-export const Member = ({ first_name = '', last_name = '', setNewMember = () => {} }) => {
-  const onChangeHandler = () => {};
+export const Member = ({
+  first_name = '',
+  last_name = '',
+  setNewMember = () => {},
+  disabled = false,
+  resetActive = () => {}
+}) => {
   const inputEl = useRef(null);
-  const valueAtr = first_name !== '' ? { value: `${first_name} - ${last_name}` } : {};
-
-  useEffect(() => { setNewMember(inputEl.current); });
+  useEffect(() => {
+    setNewMember(inputEl.current);
+  });
+  useEffect(() => {
+    const value = first_name ? `${first_name} - ${last_name}` : '';
+    inputEl.current.value = value;
+  }, []);
 
   return (
     <>
       <MemberInput
-        {...valueAtr}
         ref={inputEl}
-        onChange={onChangeHandler}
         placeholder="enter name"
+        disabled={disabled}
+        onBlur={resetActive}
+        onKeyPress={event => {
+          if (event.key === 'Enter') {
+            resetActive();
+          }
+        }}
       />
     </>
   );
@@ -32,10 +46,10 @@ export const Member = ({ first_name = '', last_name = '', setNewMember = () => {
 
 Member.propTypes = {
   first_name: string,
-  last_name: string,
+  last_name: string
 };
 
 Member.defaultProps = {
   first_name: '',
-  last_name: '',
+  last_name: ''
 };

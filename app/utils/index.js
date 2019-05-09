@@ -13,23 +13,11 @@ export const addNewMemberHandler = ({ newMember, members, setMemberList }) => {
       id: Date.now(),
       first_name: names[0],
       last_name: names[1],
-      avatar: getAvatar(),
-    },
+      avatar: getAvatar()
+    }
   ]);
 };
 
-export const removeMemberHandler = ({
-  eventName,
-  id,
-  members,
-  setMemberList,
-}) => {
-  switch (eventName) {
-    case 'edit':
-      break;
-    case 'delete':
-    default:
-      return setMemberList(members.filter(member => member.id !== id));
-  }
-  return members;
+export const removeMemberHandler = ({ id, members, setMemberList }) => {
+  return setMemberList(members.filter(member => member.id !== id));
 };
