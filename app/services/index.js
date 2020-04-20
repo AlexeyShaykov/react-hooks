@@ -19,13 +19,16 @@ export const getAvatar = avas();
 export const useGetData = (setLoaded) => {
 	const [members, setMemberList] = useState([]);
 	const header = { 'Access-Control-Allow-Origin': '*' };
-  useEffect(async () => {
-    const response = await fetch('https://reqres.in/api/users', { header });
-    const { data } = await response.json();
-		console.log('hi from hook useGetData ', data);
-
-    setMemberList(data.map(item => ({ ...item, ...{ avatar: getAvatar() } })));
-		setLoaded(false);
+  useEffect(() => {
+		const fetchData = async () => {
+			const response = await fetch('https://reqres.in/api/users', { header });
+			const { data } = await response.json();
+			console.log('hi from hook useGetData ', data);
+	
+			setMemberList(data.map(item => ({ ...item, ...{ avatar: getAvatar() } })));
+			setLoaded(false);
+		}
+		fetchData();    
   }, []);
   return { members, setMemberList };
 };

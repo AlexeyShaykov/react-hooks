@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 import { Flex, Icon, Avatar } from 'components/atoms';
 
-import { Member } from './Member';
+import Member  from './Member';
 
 export const MemberList = ({ MemberItems, eventHandler = () => {} }) => {
   const [activeID, setActiveID] = useState(-1);

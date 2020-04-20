@@ -11,7 +11,7 @@ const MemberInput = styled.input`
   border-radius: 4px;
 `;
 
-export const Member = ({
+const Member = ({
   first_name = '',
   last_name = '',
   setNewMember = () => {},
@@ -53,3 +53,5 @@ Member.defaultProps = {
   first_name: '',
   last_name: ''
 };
+
+export default React.memo(Member);
